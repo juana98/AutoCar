@@ -24,7 +24,7 @@ router.post('/add',async(req,res)=>{
 })
 
 router.get('/',async (req,res)=>{
-    const users = await pool.query('SELECT * FROM usuario')
+    const users = await pool.query('SELECT id,nombre,apellido,correo,rol.rol FROM usuario,rol WHERE usuario.idRol=rol.idRol')
     console.log(users)
     res.render('links/list',{users})
 })
