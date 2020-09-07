@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls",
+    "test:coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls",
     "dev": "nodemon src/"
   },
   "keywords": [],
