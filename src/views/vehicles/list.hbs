@@ -1,0 +1,32 @@
+<div class="container p-4 mx-auto">
+    <div class="row">
+        <div class="col-md-3">
+            <h3 class="card-title">Lista de Vehiculos</h3>
+            <hr>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                     <th>Nombre</th><th>Placa</th><th>Marca</th><th>Modelo</th><th>Año</th><th>Color</th><th>Accion</th>
+                </thead>
+                {{#each vehicles}}
+
+
+                <tr>
+                    <td>{{nombre}}</td><td>{{placa}}</td><td>{{marca}}</td><td>{{modelo}}</td><td>{{año}}</td><td>{{color}}</td>
+                    <td>
+                        <a href="/vehicles/delete/{{placa}}"
+                            class="btn btn-danger">
+                            <i class="fas fa-trash"></i>
+                            <!--  paola diaz -->
+
+
+                        </a>
+                    </td>
+                </tr>
+                {{/each}}       
+
+
+
+            </table>
+        </div>    
+    </div>
+</div>
