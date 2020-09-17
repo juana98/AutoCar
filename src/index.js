@@ -33,6 +33,7 @@ app.use((req,res,next)=>{
 app.use(require('./routes'));
 app.use(require('./routes/autentication'));
 app.use('/links',require('./routes/links'));
+app.use('/vehicles',require('./routes/vehicles'));
 
 
 //Public
