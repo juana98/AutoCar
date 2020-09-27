@@ -20,7 +20,7 @@ router.post('/add',async(req,res)=>{
     }
     console.log(newLink)
     await pool.query('INSERT INTO usuario set ?',[newLink] )
-    res.redirect('/links')
+    res.redirect('/vehicles/add')
 })
 
 router.get('/',async (req,res)=>{
