@@ -1,13 +1,20 @@
-<div class="container p-4 mx-auto">
-    <div class="row">
-        <div class="col-md-3 center">
-            <div class="card"><h3>Lista de Usuarios</h3></div>
+<div class="d-flex">
+    <div id="sidebar-container" class="bg-dark">
+        <div class="menu">
+            <a href="#" class="d-block text-light p-3"><i class="fas fa-car"></i> Vehículos</a>
+            <a href="#" class="d-block text-light p-3"><i class="fas fa-users"></i> Usuarios</a>
+            <a href="#" class="d-block text-light p-3"><i class="fas fa-calendar-alt"></i> Eventos</a>
+            <a href="#" class="d-block text-light p-3"><i class="fas fa-file"></i> Informes</a>
+        </div>
+    </div>
+    <div id="cont" class="col-md-6 center">
+        <div class="card"><h3>Lista de Usuarios</h3></div>
             
-            <table class="table table-striped bg-warning">
-                <thead class="thead-dark">
-                    <th>Nombre</th><th>Apellido</th><th>Correo</th><th>Rol</th><th>Accion</th>
-                </thead>
-                {{#each users}}
+        <table class="table table-striped bg-warning">
+            <thead class="thead-dark">
+                <th>Nombre</th><th>Apellido</th><th>Correo</th><th>Rol</th><th>Accion</th>
+            </thead>
+            {{#each users}}
                 <tr>
                     <td>{{nombre}}</td><td>{{apellido}}</td><td>{{correo}}</td><td>{{rol}}</td>
                     <td>
@@ -20,8 +27,7 @@
                         </a>
                     </td>
                 </tr>
-                {{/each}}       
-            </table>
-        </div>    
-    </div>
+            {{/each}}       
+        </table>
+    </div>    
 </div>

@@ -25,8 +25,13 @@ router.post('/add',async(req,res)=>{
 
 router.get('/',async (req,res)=>{
     const vehicles = await pool.query('SELECT nombre,placa,marca,modelo,año,color FROM vehiculo,usuario WHERE id=idUsuario')
-    console.log(vehicles)
-    res.render('vehicles/list',{vehicles})
+    const length = [vehicles.length];
+    for(i=0;i<vehicles.length;i++){
+        length[i] = i+1;
+    }
+    console.log(vehicles.length)
+    console.log(length)
+    res.render('vehicles/list',{vehicles,length})
 })
 
 router.get('/delete/:placa',async (req,res)=>{

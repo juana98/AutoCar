@@ -1,0 +1,15 @@
+#cont{
+    background-image: url(/img/logon.jpg);  
+    background-repeat: no-repeat; 
+}
+
+#sidebar-container{
+    min-height: 100vh;
+}
+#sidebar-container .menu{
+    width: 8rem;
+}
+
+a:hover{
+    text-decoration: none;
+}
