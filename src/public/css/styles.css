@@ -1,7 +1,13 @@
-#signin{
-    background-image: url(/img/fondo.jpg);  
+/*#signin{
+    background-image: url(/img/back.png);  
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: con;
+}*/
+
+#bod{
+    background-image: url(/img/back.png);  
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #sidebar-container{
