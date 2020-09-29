@@ -1,0 +1,38 @@
+<div class="container-fluid"> 
+    <div class="row">
+        <div id="sidebar-container" style="background-color:#FFCC29;">
+            <div class="menu">
+                <a href="/historial" class="btn btn-dark d-block text-ligth p-2 mx-2 my-2"><i class="fas fa-table"></i> Historial</a>
+                
+                <a href="/eventos" class="d-block text-ligth p-2 btn btn-dark mx-2 my-2"><i class="fas fa-calendar-alt"></i> Eventos</a>
+               <div class="dropdown mx-2">
+                    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-edit"></i>
+                        Actualizar Datos
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/links/edit">Datos Usuario</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/vehicles/edit">Datos Vehículo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 mx-auto mt-3">
+            <h3 class="card-title text-center m-2">Historial de Entrada y Salida del vehículo</h3>
+            <hr>
+            <table class="table table-striped" style="justify-content: center;">
+                <thead class="thead-dark">
+                     <th>N°</th><th>Fecha Entrada</th><th>Fecha Salida</th>
+                </thead>
+                 {{#each parqueadero}}
+                <tr>
+                    <td>{{idParqueadero}}</td>
+                    <td>{{fechaEntrada}}</td>
+                    <td>{{fechaSalida}}</td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>    
+    </div>
+</div>

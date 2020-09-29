@@ -1,0 +1,69 @@
+<div class="container-fluid"> 
+    <div class="row">
+        <div id="sidebar-container" style="background-color:#FFCC29;">
+            <div class="menu">
+                <a href="/historial" class="btn btn-dark d-block text-ligth p-2 mx-2 my-2"><i class="fas fa-table"></i> Historial</a>
+                
+                <a href="/eventos" class="d-block text-ligth p-2 btn btn-dark mx-2 my-2"><i class="fas fa-calendar-alt"></i> Eventos</a>
+               <div class="dropdown mx-2">
+                    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-edit"></i> Actualizar Datos
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/links/edit">Datos Usuario</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/vehicles/edit">Datos Vehículo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mx-auto mt-3">
+            <div class="card shadow p-3 mb-5 bg-white rounded">
+                <div class="card-header m-1">
+                    <h4 class="text-center">Actualizar Datos de Vehículo</h4>
+                </div>
+                <div class="card-body rounded-lg m-1" style="background-color:  #FFCC29;">
+                    <form action="/vehicles/editVehicle" method="POST">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="exampleFormControlInput1">Placa: </label>
+                                <input type="text" value={{vehicle.placa}} name="placa" class="form-control" placeholder="e.g: ABC123" required autofocus>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="exampleFormControlInput1">Marca: </label>
+                                <input type="text" value={{vehicle.marca}} name="marca" class="form-control" placeholder="Marca" required autofocus>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="exampleFormControlInput1">Modelo: </label>
+                                <input type="text" value={{vehicle.modelo}} name="modelo" class="form-control" placeholder="Modelo" required autofocus>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="exampleFormControlInput1">Color: </label>
+                                <input type="color" value={{vehicle.color}} name="color" class="form-control" placeholder="Color" required autofocus>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="exampleFormControlInput1">Año: </label>
+                                <input type="number" value={{vehicle.año}}  min="1970" max="2020" name="año" class="form-control" placeholder="Año" autofocus>
+                            </div>
+                           <!-- <div class="form-group col-md-6">
+                                <label for="exampleFormControlInput1">ID: </label>
+                                <input type="text" name="idUsuario" value={{idUsuario}} class="form-control" placeholder="id" autofocus>
+                            </div>-->
+                        </div>
+
+                        <div class="form-group"> 
+                            <button class="btn btn-dark btn-block">
+                                Guardar
+                            </button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

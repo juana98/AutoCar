@@ -1,0 +1,67 @@
+<div class="container-fluid"> 
+    <div class="row">
+        <div id="sidebar-container" style="background-color:#FFCC29;">
+            <div class="menu">
+                <a href="/historial" class="btn btn-dark d-block text-ligth p-2 mx-2 my-2"><i class="fas fa-table"></i> Historial</a>
+                
+                <a href="/eventos" class="d-block text-ligth p-2 btn btn-dark mx-2 my-2"><i class="fas fa-calendar-alt"></i> Eventos</a>
+               <div class="dropdown mx-2">
+                    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-edit"></i> Actualizar Datos
+                    </button>
+                    <div class="dropdown-menu my-2 p-2" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/links/edit">Datos Usuario</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/vehicles/edit">Datos Vehículo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mx-auto mt-3">
+            <div class="card shadow p-3 my-1 bg-white rounded">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Correo: </h5>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{user.correo}}</h5>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow p-3 my-2 bg-white rounded">
+                <div class="row no-gutters">
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h5 class="card-title">Nombre y Apellido: </h5>
+                            <hr>
+                            <h5 class="card-title">Codigo: </h5>
+                            <hr>
+                            <h5 class="card-title">Telefono: </h5>
+                            <hr>
+                            <h5 class="card-title">Rol: </h5>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                    <div class="card-body">
+                        <h5 class="card-title">{{user.nombre}} {{user.apellido}}</h5>
+                        <hr>
+                        <h5 class="card-title">{{user.id}}</h5>
+                        <hr>
+                        <h5 class="card-title">{{user.tel}}</h5>
+                        <hr>
+                        {{#each rol}}
+                        <h5 class="card-title">{{rol}}</h5>
+                        <hr>
+                        {{/each}}
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

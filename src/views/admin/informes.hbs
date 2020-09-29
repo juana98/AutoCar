@@ -8,24 +8,19 @@
         </div>
     </div>
     <div id="cont" class="col-md-8 mx-auto mt-3">
-        <h3 class="card-title text-center m-2">Lista de Usuarios</h3>
+        <h3 class="card-title text-center m-2">Informe</h3>
         <hr> 
         <table class="table table-striped bg-warning">
             <thead class="thead-dark">
-                <th>Nombre</th><th>Apellido</th><th>Correo</th><th>Rol</th><th>Accion</th>
+                <th>Nombre</th><th>Apellido</th><th>Placa vehículo</th><th>Fecha Entrada</th><th>Fecha Salida</th>
             </thead>
-            {{#each users}}
+            {{#each informes}}
                 <tr>
-                    <td>{{nombre}}</td><td>{{apellido}}</td><td>{{correo}}</td><td>{{rol}}</td>
-                    <td>
-                        <a href="/links/delete/{{id}}"
-                            class="btn btn-danger">
-                            <i class="fas fa-trash"></i>
-                            <!--  paola diaz -->
-
-
-                        </a>
-                    </td>
+                    <td>{{nombre}}</td>
+                    <td>{{apellido}}</td>
+                    <td>{{placa}}</td>
+                    <td>{{fechaEntrada}}</td>
+                    <td>{{fechaSalida}}</td>                    
                 </tr>
             {{/each}}       
         </table>

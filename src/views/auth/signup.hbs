@@ -1,24 +1,59 @@
 <div class="container p-4">
     <div class="row">
-        <div class="col-m-4 mx-auto">
-            <div class="card text-center">
-                <div class="card-header">
-                    <h3>Login</h3>
+        <div class="col-md-6 mx-auto">
+            <div class="card shadow p-3 mb-5 bg-white rounded">
+                <div class="card-header m-1">
+                    <h4 class="text-center">Registro de Usuario</h4>
                 </div>
-                <div class="card-body">
+                <div class="card-body m-1" style="background-color:#FFCC29;">
                     <form action="/signup" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="correo" placeholder="Correo" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" name="password" placeholder="Contraseña" class="form-control">
-                    </div>
-                    <div class="form group">
-                        <button class="btn btn-success btn-block">
-                            Iniciar Sesión
-                        </button>
-                    </div>
-                    </form> 
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="exampleFormControlInput1">ID: </label>
+                                <input type="text" name="id" class="form-control" placeholder="e.g: codigo del carnet o c.c" required autofocus>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="exampleFormControlInput1">Nombre: </label>
+                                <input type="text" name="nombre" class="form-control" placeholder="Nombre" required autofocus>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="exampleFormControlInput1">Apellido: </label>
+                                <input type="text" name="apellido" class="form-control" placeholder="Apellido" required autofocus>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="exampleFormControlInput1">Correo: </label>
+                                <input type="email" name="correo" class="form-control" placeholder="Correo" required autofocus>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="exampleFormControlInput1">Telefono: </label>
+                                <input type="text" name="tel" class="form-control" placeholder="Telefono" autofocus>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="exampleFormControlInput1">Contraseña: </label>
+                                <input type="password" name="password" class="form-control" placeholder="Password" required autofocus>
+                            </div>
+                        
+
+                        <div class="form-group col-md-6">
+                            <label for="exampleFormControlInput1">Rol: </label>
+                            <select name="idRol" id="rol" class="form-control" required> 
+                                <option value="D">Docente</option>
+                                <option value="E">Estudiante</option>
+                                <option value="A">Administrativo</option>
+                                <option value="V">Visitante</option>
+                            </select>
+                        </div>
+                        </div>
+                        <div class="form-group"> 
+                            <button class="btn btn-dark btn-block">
+                                Guardar
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

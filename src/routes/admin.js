@@ -4,10 +4,9 @@ const router = express.Router();
 
 const pool = require('../database');
 const helpers = require('../lib/helpers');
-const {isLoggedIn,isNotLoggedIn} = require('../lib/auth')
 
 router.get('/add',(req,res)=>{
-    res.render('links/add')
+    res.render('admin/add')
 });
 
 router.post("/add", passport.authenticate("local.signup", {
@@ -47,19 +46,33 @@ router.post("/add", passport.authenticate("local.signup", {
     res.redirect('/vehicles/add/'+id)
 })*/
 
-router.get('/',async (req,res)=>{
+router.get('/usuarios',async (req,res)=>{
     const users = await pool.query('SELECT id,nombre,apellido,correo,rol.rol FROM usuario,rol WHERE usuario.idRol=rol.idRol')
     console.log(users)
     res.render('links/list',{users})
 })
+router.get('/vehiculos',async (req,res)=>{
+    const vehicles = await pool.query('SELECT nombre,placa,marca,modelo,año,color FROM vehiculo,usuario WHERE id=idUsuario')
+    const length = [vehicles.length];
+    for(i=0;i<vehicles.length;i++){
+        length[i] = i+1;
+    }
+    console.log(vehicles.length)
+    console.log(length)
+    res.render('vehicles/list',{vehicles,length})
+});
 
-router.get('/delete/:id',async (req,res)=>{
-    const {id} = req.params;
-    await pool.query('DELETE FROM usuario WHERE ID = ?',[id]);
-    res.redirect('/links')
+router.get('/eventos',(req,res)=>{
+    res.render('admin/eventos')
+});
+
+router.get('/informes',async (req,res)=>{
+    const informes = await pool.query('SELECT nombre,apellido,vehiculo.placa,fechaEntrada,fechaSalida FROM usuario,vehiculo,parqueadero WHERE id=idUsuario and vehiculo.placa=parqueadero.placa')
+    //console.log(users)
+    res.render('admin/informes',{informes})
 })
 
-router.get('/edit',isLoggedIn,async (req,res)=>{
+router.get('/edit',async (req,res)=>{
     const user = await pool.query('SELECT tel,password FROM usuario WHERE ID = ?',[req.user.id]);
     res.render('links/edit',{user: user[0]})
 })

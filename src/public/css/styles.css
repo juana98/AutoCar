@@ -1,13 +1,14 @@
-#cont{
-    background-image: url(/img/logon.jpg);  
-    background-repeat: no-repeat; 
+#signin{
+    background-image: url(/img/fondo.jpg);  
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 #sidebar-container{
     min-height: 100vh;
 }
 #sidebar-container .menu{
-    width: 8rem;
+    width: 12rem;
 }
 
 a:hover{

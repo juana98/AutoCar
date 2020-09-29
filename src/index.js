@@ -3,6 +3,10 @@ const morgan = require('morgan');
 const exphbs = require('express-handlebars')
 const path = require('path');
 const passport = require('passport');
+const flash = require('connect-flash');
+const session = require('express-session');
+const mysqlStore = require('express-mysql-session');
+const {database} = require('./keys');
 
 //inicializacion
 const app = express();
@@ -23,6 +27,13 @@ app.engine('.hbs',exphbs({
 app.set('view engine','.hbs');
 
 //Middleware
+app.use(session({
+    secret: 'autocar',
+    resave: false,
+    saveUninitialized: false,
+    store: new mysqlStore(database)
+}))
+app.use(flash());
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
@@ -31,6 +42,10 @@ app.use(passport.session());
 
 //Global variable
 app.use((req,res,next)=>{
+    app.locals.success = req.flash('success');
+    app.locals.message = req.flash('message');
+    app.locals.user = req.user;
+    
     next();
 
 });
@@ -39,6 +54,7 @@ app.use(require('./routes'));
 app.use(require('./routes/autentication'));
 app.use('/links',require('./routes/links'));
 app.use('/vehicles',require('./routes/vehicles'));
+app.use('/admin',require('./routes/admin'));
 
 
 //Public
